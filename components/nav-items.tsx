@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { navItems } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const NavItems = () => {
@@ -16,7 +16,7 @@ const NavItems = () => {
 
   return (
     <ul className="flex flex-col gap-3 p-2 font-medium sm:flex-row sm:gap-10">
-      {navItems.map(({ href, title }) => (
+      {NAV_ITEMS.map(({ href, label }) => (
         <li key={href}>
           <Link
             href={href}
@@ -25,7 +25,7 @@ const NavItems = () => {
               isActive(href) && "text-gray-100",
             )}
           >
-            {title}
+            {label}
           </Link>
         </li>
       ))}
